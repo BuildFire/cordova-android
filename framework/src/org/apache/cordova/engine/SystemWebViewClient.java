@@ -446,6 +446,9 @@ public class SystemWebViewClient extends WebViewClient {
             return true;
         }
 
-        return super.onRenderProcessGone(view, detail);
+        // handle webview crash
+        view.reload();
+
+        return true;
     }
 }
